@@ -46,7 +46,7 @@ const About = () => (
           <div className="about-image h-100">
             <div className="d-flex align-items-center justify-content-center h-100">
               {/* Adjusted image size with inline styling */}
-              <img src="/eco-friendly-fashion-illustration.svg" alt="Sustainability at Lanepark" style={{ maxWidth: '100%', height: 'auto' }}/>
+              <img src="/eco-friendly-fashion-illustration.png" alt="Sustainability at Lanepark" style={{ maxWidth: '100%', height: 'auto' }}/>
             </div>
           </div>
         </div>
@@ -98,7 +98,7 @@ const About = () => (
           <div className="about-image h-100">
             <div className="d-flex align-items-center justify-content-center h-100">
               {/* Adjusted image size with inline styling */}
-              <img src="/community-illustration.svg" alt="Connect with Lanepark" style={{ maxWidth: '100%', height: 'auto' }}/>
+              <img src="/community-illustration.png" alt="Connect with Lanepark" style={{ maxWidth: '100%', height: 'auto' }}/>
             </div>
           </div>
         </div>
