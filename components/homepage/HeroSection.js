@@ -3,20 +3,23 @@ import { Autoplay, EffectFade, Swiper as SwiperCore } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Link from 'next/link';
 
+// Swiper configuration tailored for Lanepark's aesthetics
 const params = {
   slidesPerView: 1,
   watchOverflow: false,
   autoplay: {
-    delay: 5000
+    delay: 5000,
   },
   loop: true,
   allowTouchMove: false,
   speed: 1000,
   effect: 'fade',
   fadeEffect: {
-    crossFade: true
-  }
+    crossFade: true,
+  },
 };
+
+// Image paths, consider using images that showcase the modern and minimalistic clothing
 const images = [
   '/images/home-1.jpg',
   '/images/home-2.jpg',
@@ -34,18 +37,18 @@ export default function HeroSection() {
             <div
               className="hero-slide d-flex align-items-center justify-content-center flex-column font-color-white py-5"
               style={{
-                backgroundImage: `url("${image}")`
+                backgroundImage: `url("${image}")`,
               }}
             >
               <p className="font-size-display5 font-family-secondary mb-4 text-center hero-header">
-                The care you&apos;ve always needed
+                Embrace Simplicity with Style
               </p>
               <p className="text-transform-uppercase font-size-title mb-5 hero-subheader">
-                A range of products for you
+                Discover Modern Minimalism
               </p>
               <Link href="/collection">
                 <a className="d-flex align-items-center bg-transparent border border-color-white h-56 px-5 font-color-white hero-btn">
-                  Shop now
+                  Explore Collections
                 </a>
               </Link>
             </div>

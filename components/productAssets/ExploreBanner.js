@@ -26,7 +26,7 @@ export default class ExploreBanner extends React.Component {
   }
 
   animate() {
-    if (!this.exploreContainer.current) {
+    if (!this.exploreContainer.current || !this.image.current) {
       return;
     }
     const dimensions = this.exploreContainer.current.getBoundingClientRect();
@@ -38,15 +38,16 @@ export default class ExploreBanner extends React.Component {
           (window.innerHeight - dimensions.top) / window.innerHeight - 1;
 
         this.image.current.style.transform = `translateY(${-scrolledRatio *
-          100}px)`;
+          50}px)`; // Reduced effect for a subtler animation
       }
     }
   }
 
   render() {
     return (
-      <div className="py-5 mb-5 explore-banner">
-        <div className="bg-brand300 position-relative py-md-5">
+      <div className="py-5 mb-5 explore-banner" style={{backgroundColor: "#f5f5f5"}}>
+        {/* Background modified for a softer appearance */}
+        <div className="bg-light position-relative py-md-5">
           {/* Image Absolute */}
           <div className="position-md-absolute left-0 bottom-0 right-0">
             <div className="custom-container px-0">
@@ -54,9 +55,11 @@ export default class ExploreBanner extends React.Component {
                 <div className="col-md-5 offset-md-7">
                   <div className="position-relative">
                     <div className="position-md-absolute right-0 left-0 bottom-0">
-                      <div
+                      <img
                         ref={this.image}
-                        className="explore-banner--image"
+                        src="/path/to/lanepark-inspired-image.jpg"
+                        alt="Lanepark Collection"
+                        className="explore-banner--image w-100" // Ensure image covers the designated area responsively
                       />
                     </div>
                   </div>
@@ -71,15 +74,15 @@ export default class ExploreBanner extends React.Component {
               <div className="col-12 col-md-6 py-5">
                 <p
                   className="font-size-display3 font-weight-light mb-4"
-                  style={{ maxWidth: '20rem' }}
+                  style={{ maxWidth: '20rem', color: "#333" }} // Adjusted for better readability
                 >
-                  A new shopping experience
+                  Discover Minimalist Elegance
                 </p>
                 <div className="d-flex">
                   <Link href="/collection">
                     <a className="d-flex py-3 align-items-center font-color-black borderbottom border-color-black">
-                      <p className="mr-3">Explore products</p>
-                      <img src="/icon/arrow-long-right.svg" />
+                      <p className="mr-3">Explore the collection</p>
+                      <img src="/icon/arrow-long-right.svg" alt="Explore" />
                     </a>
                   </Link>
                 </div>

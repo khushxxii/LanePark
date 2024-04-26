@@ -45,37 +45,29 @@ class Collections extends Component {
   renderSidebar() {
     const { categories } = this.props;
 
+    // Check if categories exists before trying to map over it
+    if (!categories) {
+        return <div>Loading categories...</div>;  // Or any other fallback content
+    }
+
     return (
-      <>
-        {categories.map(category => (
-          <div key={category.id} className="custom-container">
-            <div className="row">
-              <div className="col-2 d-none d-lg-block position-relative">
-                <p className="font-size-title font-weight-medium mb-3">
-                  {category.name}
-                </p>
-                <Link href={`/collection#${category.slug}`}>
-                  <a className="mb-5 font-color-black">
-                    <div className="d-flex">
-                      <p className="mb-2 position-relative cursor-pointer">
-                        Products
-                        <span
-                          className="position-absolute font-size-tiny text-right"
-                          style={{ right: '-12px', top: '-4px' }}
-                        >
-                          {category.products}
-                        </span>
-                      </p>
+        <>
+            {categories.map(category => (
+                <div key={category.id} className="custom-container">
+                    <div className="row">
+                        <div className="col-2 d-none d-lg-block position-relative">
+                            <p className="font-size-title font-weight-medium mb-3">
+                                {category.name}
+                            </p>
+                            {/* Additional code for each category */}
+                        </div>
                     </div>
-                  </a>
-                </Link>
-              </div>
-            </div>
-          </div>
-        ))}
-      </>
+                </div>
+            ))}
+        </>
     );
-  }
+}
+
 
   /**
    * Filter products by category
@@ -95,34 +87,41 @@ class Collections extends Component {
    */
   renderCollection() {
     const { categories } = this.props;
-    const reg = /(<([^>]+)>)/ig;
+
+    // Check if categories is defined before mapping over it
+    if (!categories) {
+        // Optionally, you can render a fallback UI here or just return null
+        console.log("Categories data is not available.");
+        return <div>Loading categories...</div>;
+    }
 
     return (
       <div className="collection">
         {categories.map(category => (
           <div key={category.id}>
-              <p className="font-size-title font-weight-medium mb-4" id={category.slug}>
-                {category.name}
-              </p>
-              <div className="row mb-5 collection-1">
-                { this.filterProductsByCat(category.slug).map(product => (
-                  <div key={product.id} className="col-6 col-sm-4 col-md-3">
-                    <ProductCard
-                      permalink={product.permalink}
-                      image={product.media.source}
-                      name={product.name}
-                      price={product.price.formatted_with_symbol}
-                      description={product.description && product.description.replace(reg, '')}
-                      soldOut={product.is.sold_out}
-                    />
-                  </div>
-                ))}
-              </div>
+            <p className="font-size-title font-weight-medium mb-4" id={category.slug}>
+              {category.name}
+            </p>
+            <div className="row mb-5 collection-1">
+              { this.filterProductsByCat(category.slug).map(product => (
+                <div key={product.id} className="col-6 col-sm-4 col-md-3">
+                  <ProductCard
+                    permalink={product.permalink}
+                    image={product.media.source}
+                    name={product.name}
+                    price={product.price.formatted_with_symbol}
+                    description={product.description && product.description.replace(/(<([^>]+)>)/ig, '')}
+                    soldOut={product.is.sold_out}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         ))}
       </div>
-    )
-  }
+    );
+}
+
 
   render() {
     return (

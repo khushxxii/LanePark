@@ -1,6 +1,11 @@
 import React from 'react';
 
-import Lottie from 'react-lottie';
+import dynamic from 'next/dynamic';
+
+const Lottie = dynamic(() => import('react-lottie'), {
+  ssr: false  // This ensures Lottie is only loaded on the client-side
+});
+
 import animationData from '../../lotties/add-to-cart.json';
 
 export default function Animation( props ) {
