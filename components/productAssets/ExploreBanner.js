@@ -37,8 +37,7 @@ export default class ExploreBanner extends React.Component {
         const scrolledRatio =
           (window.innerHeight - dimensions.top) / window.innerHeight - 1;
 
-        this.image.current.style.transform = `translateY(${-scrolledRatio *
-          50}px)`; // Reduced effect for a subtler animation
+        this.image.current.style.transform = `translateY(${685 - scrolledRatio * 50}px) scale(0.8)`;
       }
     }
   }
@@ -46,20 +45,19 @@ export default class ExploreBanner extends React.Component {
   render() {
     return (
       <div className="py-5 mb-5 explore-banner" style={{backgroundColor: "#f5f5f5"}}>
-        {/* Background modified for a softer appearance */}
         <div className="bg-light position-relative py-md-5">
-          {/* Image Absolute */}
           <div className="position-md-absolute left-0 bottom-0 right-0">
             <div className="custom-container px-0">
               <div className="row">
                 <div className="col-md-5 offset-md-7">
                   <div className="position-relative">
-                    <div className="position-md-absolute right-0 left-0 bottom-0">
+                    <div className="position-md-absolute right-0 left-0 bottom-0 mx-auto">
                       <img
                         ref={this.image}
-                        src="/path/to/lanepark-inspired-image.jpg"
+                        src="/images/lanepark-inspired-image.jpg"
                         alt="Lanepark Collection"
-                        className="explore-banner--image w-100" // Ensure image covers the designated area responsively
+                        className="explore-banner--image w-100"
+                        style={{transform: 'translateY(400px) scale(0.8)'}}
                       />
                     </div>
                   </div>
@@ -67,18 +65,16 @@ export default class ExploreBanner extends React.Component {
               </div>
             </div>
           </div>
-
-          {/* Content */}
           <div ref={this.exploreContainer} className="custom-container py-md-5">
             <div className="row py-5">
-              <div className="col-12 col-md-6 py-5">
+              <div className="col-12 col-md-6 py-5 text-center"> {/* Added text-center for Bootstrap center alignment */}
                 <p
                   className="font-size-display3 font-weight-light mb-4"
-                  style={{ maxWidth: '20rem', color: "#333" }} // Adjusted for better readability
+                  style={{ maxWidth: '20rem', color: "#333", margin: '0 auto' }} // Centered text by setting margin auto
                 >
                   Discover Minimalist Elegance
                 </p>
-                <div className="d-flex">
+                <div className="d-flex justify-content-center"> {/* Flex utility to center the link */}
                   <Link href="/collection">
                     <a className="d-flex py-3 align-items-center font-color-black borderbottom border-color-black">
                       <p className="mr-3">Explore the collection</p>
