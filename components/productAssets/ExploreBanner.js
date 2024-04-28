@@ -37,7 +37,7 @@ export default class ExploreBanner extends React.Component {
         const scrolledRatio =
           (window.innerHeight - dimensions.top) / window.innerHeight - 1;
 
-        this.image.current.style.transform = `translateY(${685 - scrolledRatio * 50}px) scale(0.8)`;
+        this.image.current.style.transform = `translateY(${645 - scrolledRatio * 50}px) scale(0.7)`;
       }
     }
   }
@@ -57,7 +57,7 @@ export default class ExploreBanner extends React.Component {
                         src="/images/lanepark-inspired-image.jpg"
                         alt="Lanepark Collection"
                         className="explore-banner--image w-100"
-                        style={{transform: 'translateY(400px) scale(0.8)'}}
+                        style={{transform: 'translateY(400px) scale(0.5)'}}
                       />
                     </div>
                   </div>
