@@ -1,34 +1,23 @@
 [
   {
-    "slug": "everyday-wear",
-    "name": "Everyday Wear",
+    "slug": "facial-products",
+    "name": "Facial Products",
     "meta": {
-      "description": "Blend comfort with style in our Everyday Wear collection. Designed for the modern individual, each piece reflects minimalistic elegance, perfect for day-to-day sophistication.",
-      "image": "/images/collection/everyday-wear.png"
+      "image": "/images/collection/1.png"
     }
   },
   {
-    "slug": "professional-attire",
-    "name": "Professional Attire",
+    "slug": "hair-products",
+    "name": "Hair Products",
     "meta": {
-      "description": "Elevate your work wardrobe with our Professional Attire collection. Offering simplicity and elegance, these pieces ensure you stay sophisticated and comfortable throughout your day.",
-      "image": "/images/collection/professional-attire.png"
+      "image": "/images/collection/2.png"
     }
   },
   {
-    "slug": "casual-outings",
-    "name": "Casual Outings",
+    "slug": "body-products",
+    "name": "Body Products",
     "meta": {
-      "description": "Discover relaxed and trendy looks for your casual outings. Our collection focuses on minimal design and sustainability, perfect for those who value style and eco-consciousness.",
-      "image": "/images/collection/casual-outings.png"
-    }
-  },
-  {
-    "slug": "eco-friendly-options",
-    "name": "Eco-Friendly Options",
-    "meta": {
-      "description": "Embrace sustainability with our Eco-Friendly Options. Crafted from high-quality, sustainable materials, these pieces are designed to make you look good while doing good for the planet.",
-      "image": "/images/collection/eco-friendly-options.png"
+      "image": "/images/collection/3.png"
     }
   }
 ]
